@@ -5,6 +5,18 @@ In this phase, we aim to set up the basic scaffolding of the application to buil
 
 The application, as initially developed, was done using class components. In order to go to production, we need to convert it to an application written using React function components for better stability and performance.
 
+### [UML for Lab 26](./assets/lab-26-uml.png)
+
 **No Testing Required for Phase 1**
 
-### [UML for Lab 26](./assets/lab-26-uml.png)
+# Lab 27: Phase 2 RESTy
+
+In phase 2, we will be receiving user input in preparation of connecting to live APIs, using the useState() hook in our functional components. In order to properly manage state with the useState hook, we will now convert <App /> to a functional component.
+
+### Technical Requirements / Notes
+
+Extend your React Application so that your functional components are able to manage their own state variables using the useState() Hook.
+
+### [UML for Lab 27](./assets/lab-27-uml.png)
+
+### [Test Results for Lab 27](./assets/lab-27-testing.png)
