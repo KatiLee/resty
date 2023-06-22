@@ -10,7 +10,7 @@ function Form (props) {
       setMethod(e.target.id);
     }
   
-    const handleSubmit = e => {
+    const handleSubmit = (e) => {
       e.preventDefault();
       const formData = {
       method: method,
@@ -25,7 +25,7 @@ function Form (props) {
         <form onSubmit={handleSubmit}>
           <label >
             <span>URL: </span>
-            <input name='url' type='text' onChange={(event) => setUrl(event.target.value)}/>
+            <input name='url' type='text' onChange={(e) => setUrl(e.target.value)}/>
             <button type="submit">GO!</button>
           </label>
           <label className="methods">
