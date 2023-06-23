@@ -2,9 +2,9 @@ import { useState } from 'react';
 import './Form.scss';
 
 function Form (props) {
-    const [url, setUrl] = useState('');
+    const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon');
     const [method, setMethod] = useState('GET');
-    const [json, setJson] = useState('');
+    const [data, setData] = useState('');
 
     const handleClick = (e) => {
       setMethod(e.target.id);
@@ -15,7 +15,7 @@ function Form (props) {
       const formData = {
       method: method,
       url: url,
-      json: json,
+      data: data,
     };
     props.handleApiCall(formData);
   };
@@ -34,6 +34,7 @@ function Form (props) {
             <span id="put" onClick={handleClick} data-testid='test-put'>PUT</span>
             <span id="delete" onClick={handleClick} data-testid='test-minus'>DELETE</span>
           </label>
+          {(method === 'post' || method ==='put') && <textarea onChange={(e) => setData(e.target.value)} />}
         </form>
       </>
     );
