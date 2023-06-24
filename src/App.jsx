@@ -8,7 +8,7 @@ import Footer from './Components/Footer';
 import Form from './Components/Form';
 import Results from './Components/Results';
 
-function App () {
+const App = () => {
 
   const [data, setData] = useState(null);
   const [reqParams, setReqParams] = useState ({});
@@ -17,16 +17,27 @@ function App () {
   useEffect(() => {
     console.log('do we have an api')
     async function getData(){
-      console.log(getData)
-      const response = await axios.get(`https://pokeapi.co/api/v2/${reqParams.url}`);
-     console.log('api response: ', response.data);
-     setData(response.data);
+      if (reqParams.method === 'get') {
+        let response = await axios.get(reqParams.url);
+        setData(response.data.results);
+      }
+     if (reqParams.method === 'post') {
+      let response = await axios.post(reqParams.url, reqParams.json);
+      setData(response.data.results);
+     }
+     if (reqParams.method === 'put') {
+      let response = await axios.put(reqParams.url, reqParams.json);
+      setData(response.data.results);
+     }
+     if (reqParams.method === 'delete') {
+      let response = await axios.delete(reqParams.url);
+      setData(response.data.results);
+     }
     } 
     if (reqParams.url && reqParams.method) {
       getData();
     }
   }, [reqParams]);
-
 
 
   const callApi = (reqParams) => {
