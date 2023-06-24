@@ -1,3 +1,4 @@
+import React from 'react';
 // import './Results.scss';
 import JSONPretty from 'react-json-pretty';
 let JSONPrettyMon = require('react-json-pretty/dist/acai');

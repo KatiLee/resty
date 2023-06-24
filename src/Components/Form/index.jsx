@@ -1,8 +1,9 @@
+import React from 'react';
 import { useState } from 'react';
-import './Form.scss';
+// import './Form.scss';
 
 function Form (props) {
-    const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon');
+    const [url, setUrl] = useState('');
     const [method, setMethod] = useState('GET');
     const [data, setData] = useState('');
 
@@ -10,7 +11,7 @@ function Form (props) {
       setMethod(e.target.id);
     }
   
-    const handleSubmit = (e) => {
+    let handleSubmit = (e) => {
       e.preventDefault();
       const formData = {
       method: method,
@@ -29,12 +30,13 @@ function Form (props) {
             <button type="submit">GO!</button>
           </label>
           <label className="methods">
-            <span id="get" onClick={handleClick} data-testid='test-get'>GET</span>
-            <span id="post" onClick={handleClick} data-testid='test-post'>POST</span>
-            <span id="put" onClick={handleClick} data-testid='test-put'>PUT</span>
-            <span id="delete" onClick={handleClick} data-testid='test-minus'>DELETE</span>
+            <span id="get" onClick={handleClick} data-testid='test-get'style={{backgroundColor : method === 'get' ? 'yellow' : 'silver'}}>GET</span>
+            <span id="post" onClick={handleClick} data-testid='test-post'style={{backgroundColor : method === 'post' ? 'lime' : 'silver'}}>POST</span>
+            <span id="put" onClick={handleClick} data-testid='test-put'style={{backgroundColor : method === 'put' ? 'lavender' : 'silver'}}>PUT</span>
+            <span id="delete" onClick={handleClick} data-testid='test-minus' style={{backgroundColor : method === 'delete' ? 'pink' : 'silver'}}>DELETE</span>
           </label>
-          {(method === 'post' || method ==='put') && <textarea onChange={(e) => setData(e.target.value)} />}
+          {method === 'post' && <textarea onChange={(e) => setData(e.target.value)} />}
+          {method === 'put' && <textarea onChange={(e) => setData(e.target.value)} />}
         </form>
       </>
     );
