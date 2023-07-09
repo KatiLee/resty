@@ -20,3 +20,14 @@ Extend your React Application so that your functional components are able to man
 ### [UML for Lab 27](./assets/lab-27-uml.png)
 
 ### [Test Results for Lab 27](./assets/lab-27-testing.png)
+
+# Lab 29: Phase 4 RESTy
+
+In phase 4, we will be tracking every API call and storing it in history.
+
+The following user stories detail the major functionality for this phase of the project.
+### Technical Requirements / Notes
+
+Refactor your state management within the App component to use the useReducer() hook.
+
+Replace any component state managements to use derived state from useReducer() with a reducer function and initial state.
