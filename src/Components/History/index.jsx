@@ -7,7 +7,7 @@ const History = (props) => {
                     history.length ?
                         history.map((record, index) => (
                             <li key={`history-${index}`}>
-                                <button onClicke={() => displayHistory(index)}>
+                                <button onClick={() => displayHistory(index)}>
                                     {record.method} : {record.url}
                                 </button>
                             </li>
