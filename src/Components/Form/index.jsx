@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-// import './Form.scss';
+import './Form.scss';
 
 function Form (props) {
     const [url, setUrl] = useState('');
@@ -26,8 +26,8 @@ function Form (props) {
         <form onSubmit={handleSubmit}>
           <label >
             <span>URL: </span>
-            <input name='url' type='text' onChange={(e) => setUrl(e.target.value)}/>
-            <button type="submit">GO!</button>
+            <input data-testid='test-url-input' name='url' type='text' onChange={(e) => setUrl(e.target.value)}/>
+            <button data-testid='test-button' type="submit">GO!</button>
           </label>
           <label className="methods">
             <span id="get" onClick={handleClick} data-testid='test-get'style={{backgroundColor : method === 'get' ? 'yellow' : 'silver'}}>GET</span>
